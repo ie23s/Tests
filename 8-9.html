@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script>
+		var arr = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
+		
+		function unique (arr){
+			var newArr = [];
+			for(var i = 0; i < arr.length; i++) {
+				var has = false;
+				for(var j = 0; j < newArr.length; j++) {
+					if(arr[i] == newArr[j]) {
+						has = true;
+						break;
+					}
+				}
+				if(!has) {
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		};
+		function duplicate (arr, times){
+			if(times == 0)
+				return [2,3];
+			
+			var newArr = [];
+			
+			for(var i = 0; i < times; i++)
+				Array.prototype.push.apply(newArr, arr);
+			return newArr;
+		};
+		alert(unique(arr)); 
+		alert(duplicate([1, 2, 3, 4, 5],3)); // [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5]
+		</script>
+	</head>
+</html>
